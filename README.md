@@ -1,63 +1,67 @@
-🎵 Spotify Data Analysis Project
-📋 Project Overview
-This project analyzes a Spotify dataset using SQL to uncover insights about track characteristics, artist trends, and performance metrics. The dataset includes attributes like energy, liveness, tempo, danceability, and more. The goal is to perform in-depth analysis and extract meaningful insights that can help understand music trends and patterns.
+Spotify Data Analysis Using SQL
+Analyze real Spotify music data using advanced SQL techniques.
+This project guides you through end-to-end data exploration, business problem-solving, and query optimization—perfect for building your analytics portfolio.
 
-🚀 Features & Key Analysis
-✅ Calculated energy-to-liveness ratio to identify high-energy tracks.
+📌 Project Overview
+Goal: Analyze Spotify track data to answer business questions and demonstrate SQL skills.
 
-✅ Analyzed popularity trends across different genres and artists.
+Tech Stack: PostgreSQL (recommended), PgAdmin 4, SQL
 
-✅ Found tracks with highest/lowest danceability, tempo, and valence.
+Dataset: 20,000+ tracks with attributes like artist, track, album, genre, energy, loudness, views, likes, comments, and more.
 
-✅ Aggregated statistics like average tempo, loudness, and acousticness.
+🚀 Getting Started
+1. Download Dataset & Resources
+Dataset & SQL Scripts
 
-✅ Filtered songs by specific conditions (e.g., energy level, duration).
 
-🗄️ Dataset Description
-The dataset contains the following key columns:
+2. Database Setup
+Install PostgreSQL and PgAdmin 4 (see installation guide)
 
-track_name
+Create a new database (e.g., spotify_db)
 
-artist
+Use provided SQL script to create the table structure
 
-energy
+3. Import Data
+Use PgAdmin’s import feature to load the cleaned CSV dataset into your table
 
-liveness
+If you face import errors (e.g., data type mismatches), adjust column types (e.g., use FLOAT for likes/views/comments)
 
-tempo
+📝 Dataset Columns
+artist — Song creator
 
-danceability
+track — Song title
 
-popularity
+album — Album name
 
-valence
+album_type — Single/Album
 
-acousticness
+energy, loudness, speech, acoustic, instrumental, liveness, balance, tempo — Audio features
 
-duration_ms
+duration — Song length
 
-...and other audio features.
-🛠️ How to Use
-Import the dataset and SQL file into your preferred SQL environment (e.g., MySQL, PostgreSQL, SQLite).
+views, likes, comments — Engagement metrics
 
-Run the SQL queries from spotify.sql.
+license — Boolean
 
-Modify queries as needed to explore additional insights.
+official_video — Boolean
 
-🔍 Insights & Results
-Most popular tracks are highly danceable and have mid-range energy.
+stream — Platform info
 
-Identified artists consistently producing high-energy tracks.
+most_played_on — Spotify/YouTube
 
-Found interesting correlations between valence (positivity) and tempo.
+📊 Analysis Tasks
+Exploratory Data Analysis (EDA):
 
-📂 Files
-spotify.sql: SQL queries for analysis.
+Understand columns and data distribution
 
-README.md: Project documentation.
+Business Problem Solving:
 
-✨ Tools & Technologies
-SQL (MySQL/PostgreSQL/SQLite)
+15+ business questions (easy, medium, advanced)
 
-Data Analysis
+Example: Top artists by views, most popular genres, track engagement trends, etc.
 
+Query Optimization:
+
+Learn to write efficient queries using EXPLAIN and ANALYZE
+
+Practice window functions, subqueries, and aggregations
