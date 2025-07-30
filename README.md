@@ -1,67 +1,85 @@
-Spotify Data Analysis Using SQL
-Analyze real Spotify music data using advanced SQL techniques.
-This project guides you through end-to-end data exploration, business problem-solving, and query optimization—perfect for building your analytics portfolio.
+This project involves an end-to-end data analysis of a Spotify dataset using SQL, focusing on solving 15+ business problems categorized into easy, medium, and advanced levels. The dataset, sourced from Kaggle, contains over 20,000 track records with attributes such as artist, track name, album, energy, liveness, views, likes, and more. The project demonstrates proficiency in SQL concepts including GROUP BY, HAVING, subqueries, window functions, and query optimization techniques.
 
-📌 Project Overview
-Goal: Analyze Spotify track data to answer business questions and demonstrate SQL skills.
+Objectives
+Analyze the Spotify dataset to derive actionable business insights.
 
-Tech Stack: PostgreSQL (recommended), PgAdmin 4, SQL
+Apply SQL to solve real-world business problems across varying complexity levels.
 
-Dataset: 20,000+ tracks with attributes like artist, track, album, genre, energy, loudness, views, likes, comments, and more.
+Optimize SQL queries for performance using indexing and EXPLAIN ANALYZE.
 
-🚀 Getting Started
-1. Download Dataset & Resources
-Dataset & SQL Scripts
+Publish the project on GitHub to showcase data analysis skills to potential recruiters.
 
+Dataset
+The dataset used in this project is sourced from Kaggle and is pre-cleaned, containing 20,594 records with no duplicates. Key columns include:
 
-2. Database Setup
-Install PostgreSQL and PgAdmin 4 (see installation guide)
+Artist: The creator of the song.
 
-Create a new database (e.g., spotify_db)
+Track: The song name.
 
-Use provided SQL script to create the table structure
+Album: The album name.
 
-3. Import Data
-Use PgAdmin’s import feature to load the cleaned CSV dataset into your table
+Album Type: Single or album.
 
-If you face import errors (e.g., data type mismatches), adjust column types (e.g., use FLOAT for likes/views/comments)
+Energy, Liveness, Loudness, etc.: Song attributes.
 
-📝 Dataset Columns
-artist — Song creator
+Views, Likes, Comments: Engagement metrics.
 
-track — Song title
+Licensed, Official Video, Stream: Additional song metadata.
 
-album — Album name
+Most Played On: Platform (Spotify or YouTube).
 
-album_type — Single/Album
+The dataset can be downloaded from the GitHub repository.
 
-energy, loudness, speech, acoustic, instrumental, liveness, balance, tempo — Audio features
+Tools Used
+PostgreSQL (pgAdmin 4): For database management and query execution.
 
-duration — Song length
+Excel: For initial data exploration and cleaning.
 
-views, likes, comments — Engagement metrics
+GitHub: For hosting the project and sharing results.
 
-license — Boolean
+Project Workflow
+Data Acquisition: Downloaded the clean Spotify dataset from Kaggle.
 
-official_video — Boolean
+Data Exploration:
 
-stream — Platform info
+Used Excel to explore the dataset, verify no duplicates, and understand column significance.
 
-most_played_on — Spotify/YouTube
+Identified and resolved data import issues (e.g., fixing float values in likes, views, and comments columns, handling quotes in text fields).
 
-📊 Analysis Tasks
+Database Setup:
+
+Created a PostgreSQL database named Spotify_DB.
+
+Defined a table with appropriate data types (e.g., VARCHAR for text, BIGINT for large numbers, FLOAT for decimals, BOOLEAN for true/false).
+
+Imported the dataset into pgAdmin 4, resolving issues like quote delimiters by changing single quotes to double quotes.
+
 Exploratory Data Analysis (EDA):
 
-Understand columns and data distribution
+Performed initial queries to understand the dataset, such as counting total records and distinct artists.
 
 Business Problem Solving:
 
-15+ business questions (easy, medium, advanced)
+Easy Level: Solved 5 problems using basic SQL concepts like GROUP BY and HAVING (e.g., finding tracks with above-average liveness).
 
-Example: Top artists by views, most popular genres, track engagement trends, etc.
+Medium Level: Solved 5 problems involving subqueries and joins.
+
+Advanced Level: Solved 5 problems using advanced SQL techniques like window functions and Common Table Expressions (CTEs).
+
+Example Advanced Query: Used a CTE to calculate the difference between the highest and lowest energy values for tracks in each album.
 
 Query Optimization:
 
-Learn to write efficient queries using EXPLAIN and ANALYZE
+Analyzed query performance using EXPLAIN ANALYZE.
 
-Practice window functions, subqueries, and aggregations
+Created an index on the artist column, reducing query execution time from 7.8 ms to 1 ms (a 700% improvement).
+
+Documented the impact of indexing on performance with screenshots of execution plans.
+
+Project Publishing:
+
+Created a GitHub repository to host the dataset, SQL queries, and README.
+
+Formatted the README with bolded questions and code snippets using triple backticks (```sql) for clarity.
+
+Included screenshots of query execution plans to demonstrate optimization efforts.
