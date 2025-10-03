@@ -64,7 +64,19 @@ Key SQL techniques:
 ### 5️⃣ Business Problem Solving  
 - **Easy (5 queries):** `GROUP BY`, `HAVING`  
 - **Medium (5 queries):** Subqueries, Joins  
-- **Advanced (5 queries):** Window Functions, CTEs  
+- **Advanced (5 queries):** Window Functions, CTEs
+  ## 🏆 Outcomes  
+
+- 📌 Solved **15+ real-world business problems** using SQL (easy, medium, and advanced).  
+- 📌 Showcased expertise in **SQL concepts**: `GROUP BY`, `HAVING`, subqueries, joins, window functions, CTEs, and query optimization.  
+- 📌 Delivered **actionable business insights**, such as:  
+  - Identifying top-performing artists and tracks by views & likes.  
+  - Comparing engagement across platforms (Spotify vs YouTube).  
+  - Ranking albums by their energy and liveness ranges.  
+- 📌 Improved database query performance by **700%** (7.8 ms → 1 ms) using indexing.  
+- 📌 Built a structured workflow that mirrors **real data analytics pipelines**: data acquisition → cleaning → SQL analysis → optimization → reporting.  
+- 📌 Published the project on GitHub as a **portfolio-ready case study** for recruiters.  
+
 
 💡 Example Advanced Query:  
 ```sql
