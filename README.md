@@ -1,85 +1,78 @@
-This project involves an end-to-end data analysis of a Spotify dataset using SQL, focusing on solving 15+ business problems categorized into easy, medium, and advanced levels. The dataset, sourced from Kaggle, contains over 20,000 track records with attributes such as artist, track name, album, energy, liveness, views, likes, and more. The project demonstrates proficiency in SQL concepts including GROUP BY, HAVING, subqueries, window functions, and query optimization techniques.
+# 🎵 Spotify Data Analysis with SQL  
 
-Objectives
-Analyze the Spotify dataset to derive actionable business insights.
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)  
+![Excel](https://img.shields.io/badge/Excel-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white)  
+![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)  
 
-Apply SQL to solve real-world business problems across varying complexity levels.
+## 📌 Project Overview  
+This project is an **end-to-end SQL-based data analysis of Spotify tracks**.  
+I explored **20,000+ songs** from a Kaggle dataset and solved **15+ business problems** ranging from beginner to advanced.  
 
-Optimize SQL queries for performance using indexing and EXPLAIN ANALYZE.
+Key SQL techniques:  
+✅ `GROUP BY`, `HAVING`  
+✅ Subqueries & Joins  
+✅ Window Functions & CTEs  
+✅ Query Optimization (`EXPLAIN ANALYZE`, Indexing)  
 
-Publish the project on GitHub to showcase data analysis skills to potential recruiters.
+👉 The goal: **Showcase SQL skills and extract actionable business insights** from real-world music data.  
 
-Dataset
-The dataset used in this project is sourced from Kaggle and is pre-cleaned, containing 20,594 records with no duplicates. Key columns include:
+---
 
-Artist: The creator of the song.
+## 🎯 Objectives  
+- Derive **business insights** from Spotify data.  
+- Apply SQL to **solve problems at multiple difficulty levels**.  
+- Use **query optimization** to improve performance.  
+- Publish results on GitHub as a **portfolio project**.  
 
-Track: The song name.
+---
 
-Album: The album name.
+## 📂 Dataset  
+- 📊 **20,594 records** (clean, no duplicates)  
+- Source: [Kaggle – Spotify Dataset](#)  
+- Key Columns:  
+  - 🎤 **Artist** | 🎶 **Track** | 💿 **Album** | 🔊 **Energy, Liveness, Loudness**  
+  - 📺 **Views, Likes, Comments** (engagement)  
+  - ✅ **Licensed, Official Video, Stream**  
+  - 🎧 **Most Played On** (Spotify/YouTube)  
 
-Album Type: Single or album.
+---
 
-Energy, Liveness, Loudness, etc.: Song attributes.
+## 🛠 Tools Used  
+- **PostgreSQL (pgAdmin 4)** → SQL queries & optimization  
+- **Excel** → Initial data exploration  
+- **GitHub** → Project hosting & documentation  
 
-Views, Likes, Comments: Engagement metrics.
+---
 
-Licensed, Official Video, Stream: Additional song metadata.
+## 🔄 Workflow  
 
-Most Played On: Platform (Spotify or YouTube).
+### 1️⃣ Data Acquisition  
+- Downloaded from Kaggle → Pre-cleaned dataset  
 
-The dataset can be downloaded from the GitHub repository.
+### 2️⃣ Data Exploration  
+- Explored in Excel (checked duplicates, column types)  
+- Fixed import issues: float values, quotes in text fields  
 
-Tools Used
-PostgreSQL (pgAdmin 4): For database management and query execution.
+### 3️⃣ Database Setup  
+- Created `Spotify_DB` in PostgreSQL  
+- Defined schema with proper data types  
+- Imported dataset into pgAdmin  
 
-Excel: For initial data exploration and cleaning.
+### 4️⃣ Exploratory Data Analysis  
+- Ran queries to count total records, unique artists, etc.  
 
-GitHub: For hosting the project and sharing results.
+### 5️⃣ Business Problem Solving  
+- **Easy (5 queries):** `GROUP BY`, `HAVING`  
+- **Medium (5 queries):** Subqueries, Joins  
+- **Advanced (5 queries):** Window Functions, CTEs  
 
-Project Workflow
-Data Acquisition: Downloaded the clean Spotify dataset from Kaggle.
-
-Data Exploration:
-
-Used Excel to explore the dataset, verify no duplicates, and understand column significance.
-
-Identified and resolved data import issues (e.g., fixing float values in likes, views, and comments columns, handling quotes in text fields).
-
-Database Setup:
-
-Created a PostgreSQL database named Spotify_DB.
-
-Defined a table with appropriate data types (e.g., VARCHAR for text, BIGINT for large numbers, FLOAT for decimals, BOOLEAN for true/false).
-
-Imported the dataset into pgAdmin 4, resolving issues like quote delimiters by changing single quotes to double quotes.
-
-Exploratory Data Analysis (EDA):
-
-Performed initial queries to understand the dataset, such as counting total records and distinct artists.
-
-Business Problem Solving:
-
-Easy Level: Solved 5 problems using basic SQL concepts like GROUP BY and HAVING (e.g., finding tracks with above-average liveness).
-
-Medium Level: Solved 5 problems involving subqueries and joins.
-
-Advanced Level: Solved 5 problems using advanced SQL techniques like window functions and Common Table Expressions (CTEs).
-
-Example Advanced Query: Used a CTE to calculate the difference between the highest and lowest energy values for tracks in each album.
-
-Query Optimization:
-
-Analyzed query performance using EXPLAIN ANALYZE.
-
-Created an index on the artist column, reducing query execution time from 7.8 ms to 1 ms (a 700% improvement).
-
-Documented the impact of indexing on performance with screenshots of execution plans.
-
-Project Publishing:
-
-Created a GitHub repository to host the dataset, SQL queries, and README.
-
-Formatted the README with bolded questions and code snippets using triple backticks (```sql) for clarity.
-
-Included screenshots of query execution plans to demonstrate optimization efforts.
+💡 Example Advanced Query:  
+```sql
+WITH energy_range AS (
+  SELECT album, 
+         MAX(energy) - MIN(energy) AS energy_diff
+  FROM spotify
+  GROUP BY album
+)
+SELECT * FROM energy_range
+ORDER BY energy_diff DESC;
